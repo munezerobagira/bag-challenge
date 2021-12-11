@@ -17,8 +17,4 @@ function Layout({ children }) {
     </>
   );
 }
-export const getStaticProps = async (ctx) => {
-  console.log(ctx);
-  return {};
-};
 export default Layout;
