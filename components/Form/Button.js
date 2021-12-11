@@ -1,6 +1,6 @@
-import { FormControl } from "@chakra-ui/react";
+import { FormControl, Button } from "@chakra-ui/react";
 
-function Button({ label, ...restProps }) {
+function FormButton({ label, ...restProps }) {
   return (
     <FormControl>
       <Button w="full" {...restProps}>
@@ -10,4 +10,4 @@ function Button({ label, ...restProps }) {
   );
 }
 
-export default Button;
+export default FormButton;

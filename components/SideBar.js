@@ -1,10 +1,11 @@
 import sideBarStyles from "../styles/sideBar.module.css";
 import Link from "next/link";
+import { Container, VStack } from "@chakra-ui/react";
 function SideBar() {
   return (
-    <div className=" w-full border-r-8 fixed">
-      <div className="container">
-        <div className="logo py-4 w-auto text-left">
+    <Container position="fixed" maxW="xs">
+      <VStack pt={12}>
+        <div className="logo py-4 text-left">
           <Link href="/">
             <a className="w-full text-left font-bold text-xl">BAG</a>
           </Link>
@@ -13,15 +14,15 @@ function SideBar() {
           <Link href="/">
             <a className="py-1">MY LIST</a>
           </Link>
-          <Link href="/visited">
+          <Link href="/">
             <a className="py-1">VISTED</a>
           </Link>
-          <Link href="/tovisit">
+          <Link href="/">
             <a className="py-1">TO VISIT</a>
           </Link>
         </div>
-      </div>
-    </div>
+      </VStack>
+    </Container>
   );
 }
 

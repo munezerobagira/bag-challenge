@@ -8,6 +8,8 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import { Formik, Form } from "formik";
+import { Input } from "../components/Form";
 
 const Home = () => {
   return (

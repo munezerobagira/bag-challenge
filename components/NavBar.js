@@ -30,7 +30,7 @@ function NavBar() {
               <span>Jane</span>
             </p>
             <div>
-              <Avatar src="/icons/bell.svg" alt="Bell icon" />
+              <Avatar alt="User avatar" />
             </div>
           </div>
         </div>

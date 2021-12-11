@@ -4,6 +4,7 @@ import { filter } from "../../util/functions";
 import { baseAPI } from "../../config";
 import { useState } from "react";
 import CountryFilter from "../../components/CountryFilter";
+import { Flex } from "@chakra-ui/react";
 
 const Home = ({ countries }) => {
   const [countriesData, setContriesData] = useState(countries);
@@ -20,16 +21,15 @@ const Home = ({ countries }) => {
   ];
   return (
     <div className="p-2">
-      <Search
-        handlerChange={(e) => {
-          filterCountries({ "name.common": searchValue });
-        }}
-      />
-      <CountryFilter
-        label="Filter by region"
-        options={options}
-        clickHandler={filterCountries}
-      />
+      <Flex>
+        <Search className="flex-1" changeHandler={filterCountries} />
+        <CountryFilter
+          label="Filter by region"
+          options={options}
+          clickHandler={filterCountries}
+        />
+      </Flex>
+
       <Countries countries={countriesData} />
     </div>
   );

@@ -12,7 +12,7 @@ export const formatPopulation = (population, format = "comas") => {
     .reverse()
     .map((digit, index, array) => {
       //   console.log((index + 1) % 3 == 0);
-      if ((index + 1) % 3 == 0) {
+      if ((parseInt(index) + 1) % 3 == 0) {
         // array.push(",");
         return digit;
       }

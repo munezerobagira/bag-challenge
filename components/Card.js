@@ -11,6 +11,7 @@ import {
   HStack,
   useColorModeValue,
 } from "@chakra-ui/react";
+import Icon from "./Icon";
 import { formatPopulation, objectToArray } from "../util/functions";
 
 const ListItem = ({ label, details, ...restProps }) => {
@@ -21,23 +22,7 @@ const ListItem = ({ label, details, ...restProps }) => {
     </div>
   );
 };
-const Icon = ({
-  Icon,
-  h = 12,
-  w = 12,
-  color,
-  bg,
-  iconSize = "6",
-  rounded = "full",
-}) => {
-  const iconBagground = bg || useColorModeValue("gray.100", "gray.600");
 
-  return (
-    <Center h={h} w={w} bg={iconBagground} rounded={rounded}>
-      <Icon boxSize={iconSize} />
-    </Center>
-  );
-};
 const Card = ({
   country: { id, name, population, capital, currencies, flags },
 }) => {
@@ -49,14 +34,17 @@ const Card = ({
         </a>
       </Link>
       <VStack w="full" p="4">
+        <Heading size="md" width="full">
+          {name.common}
+        </Heading>
         <ListItem
           label="Population"
-          deatils={formatPopulation(population, "words")}
+          details={formatPopulation(population, "words")}
           className="w-full"
         />
         {/* <ListItem
           label="Currency"
-          deatils={objectToArray(currencies, "values")
+          details={objectToArray(currencies, "values")
             .map((currency) => currency.name)
             .join(", ")}
           className="w-full"
